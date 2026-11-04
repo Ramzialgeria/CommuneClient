@@ -204,7 +204,7 @@ namespace CommuneClient
             };
 
             layout.Controls.Add(portal, 0, 3);
-            //EnableFormMove(panel);
+            
             return panel;
         }
 
