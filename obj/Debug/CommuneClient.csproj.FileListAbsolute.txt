@@ -1,0 +1,16 @@
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\conf.ini
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\CommuneClient.exe.config
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\CommuneClient.exe
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\CommuneClient.pdb
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\Newtonsoft.Json.dll
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\bin\Debug\Newtonsoft.Json.xml
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.csproj.AssemblyReference.cache
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.LoginForm.resources
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.MainForm.resources
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.Properties.Resources.resources
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.csproj.GenerateResource.cache
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.csproj.CoreCompileInputs.cache
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneC.72BE48BB.Up2Date
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.exe
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.pdb
+D:\Projects INA\CommuneMonitoring\CommuneClient\CommuneClient\obj\Debug\CommuneClient.IpServerForm.resources
