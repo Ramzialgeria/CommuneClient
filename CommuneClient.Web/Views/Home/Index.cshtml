@@ -1,0 +1,89 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "الرئيسية";
+}
+<div class="page-heading">
+    <div>
+        <h1>الرئيسية</h1>
+        <p class="muted">معلومات التفعيل والبيانات المتاحة لهذه النسخة.</p>
+    </div>
+</div>
+
+@if (!string.IsNullOrWhiteSpace(Model.ErrorMessage))
+{
+    <div class="alert alert-error">@Model.ErrorMessage</div>
+}
+
+<div class="panel">
+    <h2>معلومات التفعيل</h2>
+    <div class="info-grid">
+        <div>
+            <span class="field-label">نوع التفعيل</span>
+            <strong>@(Model.Activation.ActivationType == "APW" ? "APW - الولاية" : Model.Activation.ActivationType == "APC" ? "APC - البلدية" : Model.Activation.ActivationType)</strong>
+        </div>
+        <div>
+            <span class="field-label">رمز التفعيل</span>
+            <strong dir="ltr">@Model.Activation.CodeCommune</strong>
+        </div>
+    </div>
+</div>
+
+@if (Model.Activation.ActivationType == "APW")
+{
+    <div class="panel">
+        <h2>البلديات المتاحة</h2>
+        @if (Model.Communes.Count == 0)
+        {
+            <p class="muted">لا توجد بلديات متاحة.</p>
+        }
+        else
+        {
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>رمز البلدية</th><th>اسم البلدية</th></tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var commune in Model.Communes)
+                    {
+                        <tr>
+                            <td dir="ltr">@commune.CodeCommune</td>
+                            <td>@commune.NomCommune</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+}
+else if (Model.Activation.ActivationType == "APC")
+{
+    <div class="panel">
+        <h2>المراكز المتاحة</h2>
+        @if (Model.Centres.Count == 0)
+        {
+            <p class="muted">لا توجد مراكز متاحة.</p>
+        }
+        else
+        {
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>الرمز</th><th>المركز</th><th>عدد المسجلين</th></tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var centre in Model.Centres)
+                    {
+                        <tr>
+                            <td dir="ltr">@centre.Code</td>
+                            <td>@centre.Lib</td>
+                            <td>@centre.NbInscrit</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+}
