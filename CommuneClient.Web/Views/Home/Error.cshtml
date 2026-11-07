@@ -1,0 +1,13 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "خطأ";
+}
+<div class="panel">
+    <h1>حدث خطأ أثناء معالجة الطلب</h1>
+    <p>يرجى المحاولة مرة أخرى أو الاتصال بمسؤول النظام.</p>
+    @if (Model.ShowRequestId)
+    {
+        <p class="muted">رقم التتبع: <code>@Model.RequestId</code></p>
+    }
+    <a asp-controller="Home" asp-action="Index">العودة إلى الصفحة الرئيسية</a>
+</div>
