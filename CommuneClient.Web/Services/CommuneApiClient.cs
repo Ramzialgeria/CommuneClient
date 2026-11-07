@@ -101,8 +101,10 @@ public sealed class CommuneApiClient(HttpClient httpClient)
         var result = await response.Content.ReadFromJsonAsync<T>(
             JsonOptions, cancellationToken);
 
-        return result ?? throw new InvalidOperationException(
-            "استجابة غير صالحة من خادم البلدية.");
+        if (result is null)
+            throw new InvalidOperationException("استجابة غير صالحة من خادم البلدية.");
+
+        return result;
     }
 
     private static async Task EnsureSuccessAsync(
