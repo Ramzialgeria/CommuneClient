@@ -1,0 +1,32 @@
+name: CommuneClient.Web build
+
+on:
+  push:
+    branches:
+      - main
+      - feature/communeclient-web-iis
+    paths:
+      - "CommuneClient.Web/**"
+      - ".github/workflows/communeclient-web.yml"
+  pull_request:
+    paths:
+      - "CommuneClient.Web/**"
+      - ".github/workflows/communeclient-web.yml"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install .NET 10 SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore CommuneClient.Web/CommuneClient.Web.csproj
+
+      - name: Build
+        run: dotnet build CommuneClient.Web/CommuneClient.Web.csproj --configuration Release --no-restore
