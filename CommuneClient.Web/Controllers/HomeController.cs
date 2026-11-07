@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using System.Security.Claims;
 using CommuneClient.Web.Models;
 using CommuneClient.Web.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -13,7 +12,7 @@ public sealed class HomeController(CommuneApiClient apiClient) : Controller
     [HttpGet]
     public async Task<IActionResult> Index(CancellationToken cancellationToken)
     {
-        var token = User.FindFirstValue("commune_api_token");
+        var token = User.FindFirst("commune_api_token")?.Value;
 
         if (string.IsNullOrWhiteSpace(token))
             return RedirectToAction("Login", "Account");
