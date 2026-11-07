@@ -29,13 +29,15 @@ builder.Services
         options.Cookie.IsEssential = true;
         options.Cookie.SameSite = SameSiteMode.Lax;
 
-        // The application is intentionally hosted over HTTP on the local LAN.
-        // Change this to Always only after HTTPS is introduced.
+        // HTTP is used only on the trusted local network.
+        // Set this to Always when the site is moved to HTTPS.
         options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
 
         options.LoginPath = "/Account/Login";
         options.AccessDeniedPath = "/Account/AccessDenied";
-        options.SlidingExpiration = true;
+        // The CommuneServer JWT expires after eight hours; do not extend
+        // the browser ticket beyond that token's lifetime.
+        options.SlidingExpiration = false;
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
     });
 
