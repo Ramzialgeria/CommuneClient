@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - بوابة البلدية</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-content">
+            <a class="brand" asp-controller="Home" asp-action="Index">بوابة البلدية</a>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <div class="user-area">
+                    <span>@User.Identity.Name</span>
+                    <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button class="button button-light" type="submit">تسجيل الخروج</button>
+                    </form>
+                </div>
+            }
+        </div>
+    </header>
+
+    <main class="container page-content">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div class="container">CommuneClient.Web</div>
+    </footer>
+</body>
+</html>
